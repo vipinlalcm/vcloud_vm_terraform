@@ -1,0 +1,14 @@
+#cloud-config ### This cloud-config is mandatory field in user-data to intiate the script
+package_upgrade: true
+ssh_pwauth: false
+
+users:
+- name: cygate
+  gecos: Ansible User
+  groups: users,admin,sudo
+  sudo: ALL=(ALL) NOPASSWD:ALL
+  shell: /bin/bash
+  lock_passwd: true
+  ssh_authorized_keys:
+    - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDLPLaxMFm26AzmD58vQCiEOjm46y0I/eeg0hfhr34fogtwcXfhKjEjxCSc03FHxiRwVs8ESfaNNJrRcoyGYgx4pL9vB9Lw/TvzMs4N209/Be9cgjcPohVL+qmdUtpRSWCQ+uIGE8h+NI/IMcAbDVckZ9L2IWpThEle46L8H0tYh5KVzHi5nsz74YxUQPsjGR8OIKRGhu5iozauWtn+IUZKR08w+KeIcOwt+nQN4nIos9CDrH04FXz40mCVyv5Xh7k++lrkG6zsj3lE5n8sxajhdhrTdybhd3By/C4MfxAtVSKdD1lWoHV2FAAwH8Xhy99Yu+10y1pUqItsWi6XAP3KCr2rzFpF4RveW8slJPeHV3A3QLQLGs8+zHa+84eQ+Oj674C4tTyMNzLCt+HzmEdpt/gmKfWYGJbAeCcbV1tUrm5qPb0Blssau98nV4R89A6/s7KFZ9fW3CljhJSHWUvLEp+IK6suX7hILV7myL8zAosdDKUGtBm475yqeTUptYgZJ88dv+GTr1Ch9y1mZ6HyhGxRn+emTl7AyZz+NYFJqdKuvN4eIxeFH6ev5YEzGBNIpAXlWFVTKBzdeS5DpSoBTjr3tdFvuvADlAGetkFrlipDxrXHA1r5UNO+CwOCdIO9u5WqjwUbv3kLgzSo68sk52aCoRiw/1sbvWAu3THbxQ== XOG155@C02CR8GNMD6M"
+    - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDXuWuTBzLS/5fAH+fZkazJ80QCrPTzH90du5X8/mxWxy+qS5iUcKgipi5lFkMks/AhvJlZgSY+E2F+D5+SMTVHIgq+5qJnLGRhPp+JqszhzaiKQ3+MDbpNtbGq8QV0f+WhYM5OzMUOlJSsEzOHQmEGZcZTEIpPNeT5dRKIBHLxsH2ul/u3US2bZ9oIS/fj7Y3FxjaW2ebE3PMLOmllX8K4N+SKC0fVZvitGmPoGecdRcJTC6+cvVJNvfh05VHopVtBjsD2WsWKIZbdbvcbqQppTzXvPCje8uu5COxDqXTOi09pHFqn4sfyzI9rGls5EpWM/UMezjlaAF7x3fR1lxNn creating SSH"

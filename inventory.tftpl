@@ -1,0 +1,8 @@
+%{ for key, value in host_groups ~}
+%{ for group_key, group_value in value }
+[${ group_key }]
+%{ for host_key, host_value in group_value }
+${ host_value.hostname } ansible_host="213.180.78.45" ansible_port=${ host_value.ssh_port }
+%{ endfor }
+%{ endfor }
+%{ endfor ~}
